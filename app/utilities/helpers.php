@@ -27,7 +27,7 @@ if (!function_exists('uploadImage')) {
      * uploads given file and returns name of file
      */
     function uploadImage(
-        \Illuminate\Http\UploadedFile $image, string $directory, string $name, string $format = 'jpg',
+        mixed $image, string $directory, string $name, string $format = 'jpg',
         int                           $quality = 95, ?int $resize_to = null
     ): string|bool
     {
@@ -43,8 +43,8 @@ if (!function_exists('uploadImage')) {
 
         $image = $image->encode($format, $quality);
 
-        $image->save(public_path($directory . $name));
-        return $name;
+        $image->save(public_path($directory . $name . '.' . $format));
+        return $name. '.' . $format;
     }
 }
 

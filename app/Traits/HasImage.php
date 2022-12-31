@@ -93,7 +93,7 @@ trait HasImage
         $upload_directory = $this->author->mediaDir();
         $file_name = uniqueNameGenerator($upload_directory);
         $resize = null;
-
+        $image = Image::make($image);
         if (!$image->getWidth() < $this->max_width && $image->getHeight() < $this->max_height) {
             $resize = $this->max_width;
         }
