@@ -13,7 +13,7 @@ Laraword is an open source project that helps to make an article publishing plat
 for install clone this repo and run composer and npm install commands to install project requirements.
 
 ```bash
-git clone git@github.com:
+git clone https://github.com/mojtaba-p/laraword.git
 cd laraword
 composer install
 npm install
