@@ -141,7 +141,7 @@ class Article extends Model
     /**
      * returns path to the thumbnail by given size.
      */
-    public function thumbnailPath(int $size = null): mixed
+    public function thumbnailPath($size = null): mixed
     {
         if (isset($size)) {
             return $this->author->mediaPath($size . $this->thumbnail);
