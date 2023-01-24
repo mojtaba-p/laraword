@@ -55,6 +55,9 @@ if (!function_exists('resizeWithAspectRatio')) {
      */
     function resizeWithAspectRatio($image, $size): mixed
     {
+        if(! $image instanceof Image)
+            $image = Image::make($image);
+
         if ($image->getWidth() > $image->getHeight()) {
             $image->resize($size, null, function ($constraint) {
                 $constraint->aspectRatio();
